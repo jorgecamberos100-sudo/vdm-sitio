@@ -1,0 +1,561 @@
+/* ============================================
+   VDM — Vitrina Digital México
+   Paleta oscura con acento dorado/ámbar
+   ============================================ */
+
+:root {
+--bg: #0f1115;
+--bg-alt: #161a21;
+--bg-tarjeta: #1b1f27;
+--texto: #e9edf2;
+--texto-suave: #b3bcc7;
+--acento: #f0b429;
+--acento-oscuro: #d99e16;
+--borde: #2a313c;
+--sombra: 0 8px 24px rgba(0,0,0,0.35);
+--maxw: 1160px;
+--radio: 12px;
+}
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+background: var(--bg);
+color: var(--texto);
+line-height: 1.6;
+overflow-x: hidden;
+}
+
+/* ---------- Accesibilidad / utilidades ---------- */
+a {
+color: inherit;
+text-decoration: none;
+}
+
+img, svg {
+max-width: 100%;
+height: auto;
+display: block;
+}
+
+/* ---------- Cabecera ---------- */
+.site-header {
+position: sticky;
+top: 0;
+z-index: 100;
+background: rgba(15, 17, 21, 0.92);
+backdrop-filter: blur(8px);
+border-bottom: 1px solid var(--borde);
+}
+
+.header-inner {
+max-width: var(--maxw);
+margin: 0 auto;
+padding: 14px 20px;
+display: flex;
+align-items: center;
+gap: 20px;
+flex-wrap: wrap;
+}
+
+.logo {
+font-weight: 800;
+font-size: 1.35rem;
+color: var(--acento);
+white-space: nowrap;
+}
+
+.logo-sub {
+font-weight: 500;
+font-size: 1rem;
+color: var(--texto-suave);
+margin-left: 4px;
+}
+
+.nav {
+display: flex;
+gap: 18px;
+flex-wrap: wrap;
+margin-left: auto;
+}
+
+.nav a {
+color: var(--texto-suave);
+font-weight: 500;
+font-size: 0.98rem;
+padding: 4px 2px;
+transition: color .15s ease;
+}
+
+.nav a:hover,
+.nav a:focus {
+color: var(--acento);
+}
+
+/* ---------- Botones ---------- */
+.btn {
+display: inline-block;
+padding: 12px 26px;
+border-radius: 8px;
+font-weight: 700;
+font-size: 1rem;
+cursor: pointer;
+border: 2px solid transparent;
+transition: background .15s ease, transform .05s ease, color .15s ease, border-color .15s ease;
+}
+
+.btn-header {
+background: var(--acento);
+color: #1a1408;
+margin-left: auto;
+white-space: nowrap;
+}
+
+.btn-header:hover,
+.btn-header:focus {
+background: var(--acento-oscuro);
+}
+
+.btn-hero {
+background: var(--acento);
+color: #1a1408;
+margin-top: 8px;
+}
+
+.btn-hero:hover,
+.btn-hero:focus {
+background: var(--acento-oscuro);
+}
+
+.btn-form {
+background: var(--acento);
+color: #1a1408;
+width: 100%;
+margin-top: 8px;
+}
+
+.btn-form:hover,
+.btn-form:focus {
+background: var(--acento-oscuro);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+position: relative;
+background:
+radial-gradient(circle at 80% 20%, rgba(240,180,41,0.10), transparent 55%),
+linear-gradient(135deg, #0f1115 0%, #161a21 100%);
+overflow: hidden;
+padding: 96px 20px 88px;
+}
+
+.hero-deco {
+position: absolute;
+inset: 0;
+background-image:
+linear-gradient(rgba(240,180,41,0.04) 1px, transparent 1px),
+linear-gradient(90deg, rgba(240,180,41,0.04) 1px, transparent 1px);
+background-size: 48px 48px;
+mask-image: radial-gradient(circle at 70% 30%, black, transparent 70%);
+-webkit-mask-image: radial-gradient(circle at 70% 30%, black, transparent 70%);
+pointer-events: none;
+}
+
+.hero-inner {
+position: relative;
+max-width: 760px;
+margin: 0 auto;
+text-align: center;
+}
+
+.hero h1 {
+font-size: clamp(1.9rem, 5vw, 3.1rem);
+line-height: 1.15;
+color: var(--texto);
+margin-bottom: 14px;
+}
+
+.hero-sub {
+color: var(--acento);
+font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+font-weight: 600;
+margin-bottom: 16px;
+}
+
+.hero-text {
+color: var(--texto-suave);
+font-size: clamp(1rem, 2vw, 1.15rem);
+margin-bottom: 26px;
+}
+
+/* ---------- Secciones ---------- */
+.seccion {
+max-width: var(--maxw);
+margin: 0 auto;
+padding: 72px 20px;
+}
+
+.seccion h2 {
+font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+color: var(--texto);
+margin-bottom: 8px;
+}
+
+.seccion-intro {
+color: var(--texto-suave);
+margin-bottom: 34px;
+font-size: 1.05rem;
+}
+
+/* ---------- Servicios ---------- */
+.servicios-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+}
+
+.servicio {
+background: var(--bg-tarjeta);
+border: 1px solid var(--borde);
+border-radius: var(--radio);
+padding: 24px;
+transition: border-color .15s ease, transform .15s ease;
+}
+
+.servicio:hover {
+border-color: var(--acento);
+transform: translateY(-2px);
+}
+
+.servicio h3 {
+font-size: 1.05rem;
+color: var(--acento);
+margin-bottom: 8px;
+}
+
+.servicio p {
+color: var(--texto-suave);
+font-size: 0.96rem;
+}
+
+/* ---------- Precios ---------- */
+.tarjetas {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 22px;
+align-items: stretch;
+}
+
+.tarjeta {
+position: relative;
+background: var(--bg-tarjeta);
+border: 1px solid var(--borde);
+border-radius: var(--radio);
+padding: 28px 22px;
+display: flex;
+flex-direction: column;
+}
+
+.tarjeta-founded {
+border-color: var(--acento);
+box-shadow: 0 0 0 1px var(--acento) inset;
+}
+
+.etiqueta-limitado {
+position: absolute;
+top: -12px;
+left: 20px;
+background: var(--acento);
+color: #1a1408;
+font-weight: 700;
+font-size: 0.78rem;
+padding: 3px 10px;
+border-radius: 6px;
+letter-spacing: .03em;
+text-transform: uppercase;
+}
+
+.tarjeta h3 {
+font-size: 1.25rem;
+color: var(--texto);
+margin-bottom: 12px;
+}
+
+.precio {
+color: var(--texto-suave);
+margin-bottom: 4px;
+font-size: 0.98rem;
+}
+
+.precio span {
+color: var(--acento);
+font-weight: 700;
+font-size: 1.15rem;
+}
+
+.detalle {
+color: var(--texto-suave);
+font-size: 0.88rem;
+margin-bottom: 16px;
+min-height: 2.6em;
+}
+
+.incluye {
+list-style: none;
+padding-left: 0;
+margin-bottom: 0;
+}
+
+.incluye li {
+position: relative;
+padding-left: 22px;
+margin-bottom: 8px;
+color: var(--texto);
+font-size: 0.94rem;
+}
+
+.incluye li::before {
+content: "✓";
+position: absolute;
+left: 0;
+top: 0;
+color: var(--acento);
+font-weight: 700;
+}
+
+.ancla {
+margin-top: 30px;
+padding: 20px 22px;
+border: 1px dashed var(--borde);
+border-radius: var(--radio);
+background: var(--bg-alt);
+}
+
+.tachado {
+text-decoration: line-through;
+text-decoration-thickness: 2px;
+text-decoration-color: var(--acento);
+color: var(--texto-suave);
+}
+
+.nota-ancla {
+margin-top: 8px;
+color: var(--texto-suave);
+font-size: 0.9rem;
+}
+
+/* ---------- Demos ---------- */
+.demos-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 22px;
+}
+
+.demo {
+background: var(--bg-tarjeta);
+border: 1px solid var(--borde);
+border-radius: var(--radio);
+padding: 26px 22px;
+display: flex;
+flex-direction: column;
+}
+
+.demo-badge {
+align-self: flex-start;
+background: transparent;
+color: var(--acento);
+border: 1px solid var(--acento);
+border-radius: 6px;
+font-weight: 700;
+font-size: 0.78rem;
+padding: 4px 10px;
+margin-bottom: 16px;
+letter-spacing: .02em;
+}
+
+.demo h3 {
+font-size: 1.15rem;
+color: var(--texto);
+margin-bottom: 8px;
+}
+
+.demo-sub {
+color: var(--texto-suave);
+font-size: 0.9rem;
+margin-bottom: 10px;
+}
+
+.demo-texto {
+color: var(--texto);
+font-size: 0.95rem;
+}
+
+.demo-nota {
+margin-top: 26px;
+color: var(--texto-suave);
+font-size: 0.9rem;
+border-top: 1px solid var(--borde);
+padding-top: 18px;
+}
+
+/* ---------- Compromiso ---------- */
+.compromiso-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+gap: 22px;
+}
+
+.compromiso-item {
+background: var(--bg-tarjeta);
+border: 1px solid var(--borde);
+border-left: 4px solid var(--acento);
+border-radius: var(--radio);
+padding: 24px 20px;
+}
+
+.compromiso-item h3 {
+color: var(--acento);
+font-size: 1.1rem;
+margin-bottom: 8px;
+}
+
+.compromiso-item p {
+color: var(--texto-suave);
+font-size: 0.95rem;
+}
+
+/* ---------- Contacto ---------- */
+.contacto-inner {
+max-width: 620px;
+}
+
+.form-contacto {
+background: var(--bg-tarjeta);
+border: 1px solid var(--borde);
+border-radius: var(--radio);
+padding: 28px 24px;
+}
+
+.form-contacto label {
+display: block;
+font-weight: 600;
+color: var(--texto);
+margin-bottom: 6px;
+margin-top: 16px;
+font-size: 0.95rem;
+}
+
+.form-contacto label:first-child {
+margin-top: 0;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+width: 100%;
+background: var(--bg);
+border: 1px solid var(--borde);
+border-radius: 8px;
+padding: 12px 14px;
+color: var(--texto);
+font: inherit;
+font-size: 0.98rem;
+transition: border-color .15s ease;
+}
+
+.form-contacto input:focus,
+.form-contacto textarea:focus {
+outline: none;
+border-color: var(--acento);
+}
+
+.form-contacto textarea {
+resize: vertical;
+min-height: 120px;
+}
+
+.respuesta-form {
+margin-top: 20px;
+padding: 16px 20px;
+border-radius: 8px;
+background: rgba(240,180,41,0.10);
+border: 1px solid var(--acento);
+color: var(--texto);
+font-weight: 600;
+}
+
+.respuesta-form:empty {
+display: none;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+border-top: 1px solid var(--borde);
+background: var(--bg-alt);
+text-align: center;
+padding: 28px 20px;
+margin-top: 40px;
+color: var(--texto-suave);
+font-size: 0.9rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+.header-inner {
+flex-direction: column;
+align-items: stretch;
+gap: 12px;
+}
+
+.nav {
+margin-left: 0;
+justify-content: center;
+gap: 14px;
+}
+
+.btn-header {
+margin-left: 0;
+width: 100%;
+text-align: center;
+}
+
+.hero {
+padding: 72px 20px 64px;
+}
+
+.seccion {
+padding: 52px 20px;
+}
+
+.servicios-grid,
+.tarjetas,
+.demos-grid,
+.compromiso-grid {
+grid-template-columns: 1fr;
+}
+}
+
+/* ---------- Prevención de desborde horizontal ---------- */
+html, body {
+max-width: 100%;
+}
+
+.hero, .seccion, .site-header, .site-footer {
+overflow-x: hidden;
+}
+
+/* Anchos fluidos garantizados */
+.tarjetas > *,
+.demos-grid > *,
+.servicios-grid > *,
+.compromiso-grid > * {
+min-width: 0;
+}
