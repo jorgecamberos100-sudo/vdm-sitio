@@ -47,6 +47,34 @@ height: auto;
 display: block;
 }
 
+/* ---------- Banner DEMO ---------- */
+.demo-banner {
+max-width: var(--maxw);
+margin: 0 auto;
+padding: 16px 20px;
+display: flex;
+align-items: center;
+gap: 16px;
+flex-wrap: wrap;
+border-bottom: 1px solid var(--borde);
+background: var(--bg-alt);
+}
+
+.demo-banner .demo-badge {
+margin-bottom: 0;
+}
+
+.volver-link {
+color: var(--acento);
+font-weight: 600;
+text-decoration: none;
+}
+
+.volver-link:hover,
+.volver-link:focus {
+text-decoration: underline;
+}
+
 /* ---------- Cabecera ---------- */
 .site-header {
 position: sticky;
@@ -145,6 +173,26 @@ margin-top: 8px;
 
 .btn-form:hover,
 .btn-form:focus {
+background: var(--acento-oscuro);
+}
+
+/* Botón "Ver vista previa" en tarjetas demo */
+.btn-demo {
+display: inline-block;
+padding: 10px 20px;
+border-radius: 8px;
+font-weight: 700;
+font-size: 0.9rem;
+cursor: pointer;
+border: 2px solid transparent;
+background: var(--acento);
+color: #1a1408;
+margin-top: auto;
+transition: background .15s ease, transform .05s ease;
+}
+
+.btn-demo:hover,
+.btn-demo:focus {
 background: var(--acento-oscuro);
 }
 
@@ -438,14 +486,16 @@ font-size: 0.95rem;
 max-width: 620px;
 }
 
-.form-contacto {
+.form-contacto,
+.form-reservas {
 background: var(--bg-tarjeta);
 border: 1px solid var(--borde);
 border-radius: var(--radio);
 padding: 28px 24px;
 }
 
-.form-contacto label {
+.form-contacto label,
+.form-reservas label {
 display: block;
 font-weight: 600;
 color: var(--texto);
@@ -454,12 +504,17 @@ margin-top: 16px;
 font-size: 0.95rem;
 }
 
-.form-contacto label:first-child {
+.form-contacto label:first-child,
+.form-reservas label:first-child {
 margin-top: 0;
 }
 
 .form-contacto input,
-.form-contacto textarea {
+.form-reservas input,
+.form-contacto select,
+.form-reservas select,
+.form-contacto textarea,
+.form-reservas textarea {
 width: 100%;
 background: var(--bg);
 border: 1px solid var(--borde);
@@ -472,12 +527,17 @@ transition: border-color .15s ease;
 }
 
 .form-contacto input:focus,
-.form-contacto textarea:focus {
+.form-reservas input:focus,
+.form-contacto select:focus,
+.form-reservas select:focus,
+.form-contacto textarea:focus,
+.form-reservas textarea:focus {
 outline: none;
 border-color: var(--acento);
 }
 
-.form-contacto textarea {
+.form-contacto textarea,
+.form-reservas textarea {
 resize: vertical;
 min-height: 120px;
 }
@@ -494,6 +554,17 @@ font-weight: 600;
 
 .respuesta-form:empty {
 display: none;
+}
+
+.confirmacion {
+display: none;
+margin-top: 12px;
+padding: 12px 16px;
+border-radius: 8px;
+background: rgba(240,180,41,0.10);
+border: 1px solid var(--acento);
+color: var(--texto);
+font-weight: 600;
 }
 
 /* ---------- Footer ---------- */
