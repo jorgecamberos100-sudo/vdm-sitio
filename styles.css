@@ -47,22 +47,7 @@ height: auto;
 display: block;
 }
 
-/* ---------- Banner DEMO ---------- */
-.demo-banner {
-max-width: var(--maxw);
-margin: 0 auto;
-padding: 16px 20px;
-display: flex;
-align-items: center;
-gap: 16px;
-flex-wrap: wrap;
-border-bottom: 1px solid var(--borde);
-background: var(--bg-alt);
-}
 
-.demo-banner .demo-badge {
-margin-bottom: 0;
-}
 
 .volver-link {
 color: var(--acento);
@@ -176,25 +161,7 @@ margin-top: 8px;
 background: var(--acento-oscuro);
 }
 
-/* Botón "Ver vista previa" en tarjetas demo */
-.btn-demo {
-display: inline-block;
-padding: 10px 20px;
-border-radius: 8px;
-font-weight: 700;
-font-size: 0.9rem;
-cursor: pointer;
-border: 2px solid transparent;
-background: var(--acento);
-color: #1a1408;
-margin-top: auto;
-transition: background .15s ease, transform .05s ease;
-}
 
-.btn-demo:hover,
-.btn-demo:focus {
-background: var(--acento-oscuro);
-}
 
 /* ---------- Hero ---------- */
 .hero {
@@ -401,59 +368,7 @@ color: var(--texto-suave);
 font-size: 0.9rem;
 }
 
-/* ---------- Demos ---------- */
-.demos-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-gap: 22px;
-}
 
-.demo {
-background: var(--bg-tarjeta);
-border: 1px solid var(--borde);
-border-radius: var(--radio);
-padding: 26px 22px;
-display: flex;
-flex-direction: column;
-}
-
-.demo-badge {
-align-self: flex-start;
-background: transparent;
-color: var(--acento);
-border: 1px solid var(--acento);
-border-radius: 6px;
-font-weight: 700;
-font-size: 0.78rem;
-padding: 4px 10px;
-margin-bottom: 16px;
-letter-spacing: .02em;
-}
-
-.demo h3 {
-font-size: 1.15rem;
-color: var(--texto);
-margin-bottom: 8px;
-}
-
-.demo-sub {
-color: var(--texto-suave);
-font-size: 0.9rem;
-margin-bottom: 10px;
-}
-
-.demo-texto {
-color: var(--texto);
-font-size: 0.95rem;
-}
-
-.demo-nota {
-margin-top: 26px;
-color: var(--texto-suave);
-font-size: 0.9rem;
-border-top: 1px solid var(--borde);
-padding-top: 18px;
-}
 
 /* ---------- Compromiso ---------- */
 .compromiso-grid {
@@ -608,7 +523,6 @@ padding: 52px 20px;
 
 .servicios-grid,
 .tarjetas,
-.demos-grid,
 .compromiso-grid {
 grid-template-columns: 1fr;
 }
@@ -625,7 +539,6 @@ overflow-x: hidden;
 
 /* Anchos fluidos garantizados */
 .tarjetas > *,
-.demos-grid > *,
 .servicios-grid > *,
 .compromiso-grid > * {
 min-width: 0;
